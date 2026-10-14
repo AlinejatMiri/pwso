@@ -1,0 +1,389 @@
+/* Home hero carousel treatment. */
+.hero[aria-roledescription="carousel"] .hs-mosaic {
+  border: 3px solid #fff;
+  border-radius: 18px;
+  box-shadow:
+    0 0 0 2px color-mix(in srgb, var(--brand, #0a58b8) 55%, var(--gold, #e8a33d)),
+    0 24px 54px -28px rgba(11, 31, 58, 0.7);
+}
+
+.hero[aria-roledescription="carousel"] .hs-tile {
+  outline: 1px solid rgba(255, 255, 255, 0.35);
+  outline-offset: -1px;
+}
+
+.hero[aria-roledescription="carousel"] .hs-controls {
+  gap: 10px;
+}
+
+.hero[aria-roledescription="carousel"] .hs-controls button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  color: var(--ink, #0e1f38);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(5, 20, 40, 0.25);
+  backdrop-filter: blur(8px);
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.hero[aria-roledescription="carousel"] .hs-controls button:hover {
+  color: var(--ink, #0e1f38);
+  background: var(--gold-300, #f3c46e);
+  border-color: var(--gold-300, #f3c46e);
+  transform: translateY(-2px);
+}
+
+.hero[aria-roledescription="carousel"] .hs-controls button:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+.hero[aria-roledescription="carousel"] .hs-tab.is-active .hs-thumb {
+  border-radius: 6px;
+  box-shadow:
+    0 0 0 2px #fff,
+    0 0 0 4px var(--brand, #0a58b8),
+    0 0 0 6px color-mix(in srgb, var(--gold, #e8a33d) 70%, transparent);
+}
+
+.hero[aria-roledescription="carousel"] .hs-track {
+  height: 4px;
+  background: color-mix(in srgb, var(--brand, #0a58b8) 12%, #fff);
+}
+/* Full-bleed image carousel with readable foreground content. */
+.hero[aria-roledescription="carousel"] {
+  min-height: 640px;
+  padding: 0;
+  background: var(--ink, #0e1f38);
+}
+
+.hero[aria-roledescription="carousel"] .hs-panel,
+.hero[aria-roledescription="carousel"] .hs-wheel {
+  display: none;
+}
+
+.hero[aria-roledescription="carousel"] .hero-grid {
+  display: block;
+  min-height: 640px;
+  padding-block: clamp(76px, 9vw, 118px) 126px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero[aria-roledescription="carousel"] .hs-stage-wrap {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+}
+
+.hero[aria-roledescription="carousel"] .hs-stage-wrap::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(5, 20, 40, 0.9) 0%, rgba(5, 20, 40, 0.74) 44%, rgba(5, 20, 40, 0.28) 100%),
+    linear-gradient(0deg, rgba(5, 20, 40, 0.68), transparent 48%);
+}
+
+.hero[aria-roledescription="carousel"] .hs-mosaic {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.hero[aria-roledescription="carousel"] .hs-tile:not(:first-child) {
+  display: none;
+}
+
+.hero[aria-roledescription="carousel"] .hs-tile:first-child {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+
+.hero[aria-roledescription="carousel"] .hs-tile:first-child img {
+  inset: 0 auto auto 0;
+  width: 100cqw;
+  height: 100cqh;
+  object-fit: cover;
+}
+
+.hero[aria-roledescription="carousel"] .hs-copy {
+  display: block;
+  width: min(660px, 64%);
+  position: relative;
+  z-index: 3;
+}
+
+.hero[aria-roledescription="carousel"] .hs-slide {
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.42);
+}
+
+.hero[aria-roledescription="carousel"] .hs-slide .eyebrow {
+  color: var(--pwso-light-blue, #00aeef);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.hero[aria-roledescription="carousel"] .hs-title,
+.hero[aria-roledescription="carousel"] .hs-title em {
+  color: #fff;
+}
+
+.hero[aria-roledescription="carousel"] .hs-title em {
+  color: var(--pwso-yellow, #facc15);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.hero[aria-roledescription="carousel"] .hs-slide .lead {
+  max-width: 39rem;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.hero[aria-roledescription="carousel"] .btn-primary {
+  color: var(--ink, #0e1f38);
+  background: var(--gold-300, #f3c46e);
+  border-color: var(--gold-300, #f3c46e);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.hero[aria-roledescription="carousel"] .btn-primary:hover {
+  color: var(--ink, #0e1f38);
+  background: #fff;
+  border-color: #fff;
+}
+
+.hero[aria-roledescription="carousel"] .btn-secondary {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(8px);
+}
+
+.hero[aria-roledescription="carousel"] .btn-secondary:hover {
+  color: var(--ink, #0e1f38);
+  background: #fff;
+  border-color: #fff;
+}
+
+.hero[aria-roledescription="carousel"] .hs-tabs {
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  bottom: 28px;
+  width: min(660px, 64%);
+  max-width: none;
+  margin: 0;
+}
+
+.hero[aria-roledescription="carousel"] .hs-tab {
+  color: rgba(255, 255, 255, 0.78);
+  padding: 7px 9px;
+  background: rgba(5, 20, 40, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+}
+
+.hero[aria-roledescription="carousel"] .hs-tab:hover,
+.hero[aria-roledescription="carousel"] .hs-tab.is-active {
+  color: #fff;
+  background: rgba(6, 54, 115, 0.92);
+  border-color: var(--gold-300, #f3c46e);
+}
+
+.hero[aria-roledescription="carousel"] .hs-tab-num {
+  color: var(--pwso-yellow, #facc15);
+}
+
+.hero[aria-roledescription="carousel"] .hs-track {
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.hero[aria-roledescription="carousel"] .hs-controls {
+  right: clamp(20px, 4vw, 40px);
+  bottom: 28px;
+}
+
+@media (max-width: 820px) {
+  .hero[aria-roledescription="carousel"] {
+    min-height: 660px;
+    padding: 0;
+  }
+
+  .hero[aria-roledescription="carousel"] .hero-grid {
+    min-height: 660px;
+    padding-block: 70px 138px;
+  }
+
+  .hero[aria-roledescription="carousel"] .hs-copy {
+    width: 100%;
+  }
+
+  .hero[aria-roledescription="carousel"] .hs-tabs {
+    width: 100%;
+    bottom: 24px;
+    gap: 8px;
+  }
+
+  .hero[aria-roledescription="carousel"] .hs-tab {
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 4px 7px;
+    font-size: 0.6875rem;
+  }
+
+  .hero[aria-roledescription="carousel"] .hs-thumb {
+    width: 28px;
+    height: 28px;
+  }
+
+  .hero[aria-roledescription="carousel"] .hs-controls {
+    right: var(--gutter, 20px);
+    left: auto;
+    width: max-content;
+    transform: none;
+    bottom: 116px;
+  }
+
+}
+
+@media (max-width: 520px) {
+  .hero[aria-roledescription="carousel"] .hero-grid {
+    min-height: 700px;
+    padding-block: 62px 156px;
+  }
+
+  .hero[aria-roledescription="carousel"] .hs-title {
+    font-size: clamp(2rem, 9vw, 2.5rem);
+  }
+
+  .hero[aria-roledescription="carousel"] .hs-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 10px;
+    bottom: 18px;
+  }
+
+  .hero[aria-roledescription="carousel"] .hs-controls {
+    bottom: 120px;
+  }
+
+}
+/* Keep page copy and slide selectors clear of the bottom navigation. */
+.hero[aria-roledescription="carousel"] .hs-copy {
+  position: static;
+}
+
+.hero[aria-roledescription="carousel"] .hs-slide {
+  position: relative;
+  z-index: 3;
+  min-width: 0;
+  width: 100%;
+}
+
+.hero[aria-roledescription="carousel"] .hs-slides {
+  width: 100%;
+  min-width: 0;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (max-width: 820px) {
+  .hero[aria-roledescription="carousel"] .hs-tabs {
+    left: 0;
+  }
+
+  .hero[aria-roledescription="carousel"] .hs-slide .lead {
+    max-width: 34ch;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero[aria-roledescription="carousel"] .hs-title {
+    max-width: 14ch;
+    font-size: clamp(1.9rem, 8.6vw, 2.25rem);
+    line-height: 1.08;
+    text-wrap: balance;
+  }
+
+  .hero[aria-roledescription="carousel"] .hs-slide .lead {
+    max-width: 34ch;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+
+  .hero[aria-roledescription="carousel"] .btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .hero[aria-roledescription="carousel"] .btn-row .btn {
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+}
+@media (max-width: 820px) {
+  .hero[aria-roledescription="carousel"] .hs-tab-text {
+    display: inline;
+  }
+
+  .hero[aria-roledescription="carousel"] .hs-tab-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero[aria-roledescription="carousel"] .btn-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 280px;
+  }
+
+  .hero[aria-roledescription="carousel"] .btn-row .btn {
+    width: 100%;
+  }
+}
+/* Anchor the full-bleed media to the hero, not the centered text container. */
+.hero[aria-roledescription="carousel"] .hero-grid {
+  position: static;
+}
+
+.hero[aria-roledescription="carousel"] .hs-stage-wrap {
+  inset: 0;
+  right: 0;
+  left: 0;
+  width: auto;
+  transform: none;
+}
+
+.hero[aria-roledescription="carousel"] .hs-tabs {
+  left: max(var(--gutter, 20px), calc((100vw - var(--container, 1180px)) / 2));
+}
+
+@media (max-width: 820px) {
+  .hero[aria-roledescription="carousel"] .hs-tabs {
+    left: var(--gutter, 20px);
+    width: calc(100% - (2 * var(--gutter, 20px)));
+  }
+}
